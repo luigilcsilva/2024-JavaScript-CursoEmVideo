@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trump Wall</title>
+</head>
+<body>
+    <h1>Make America great again!</h1>
+    What is your country? 
+    <select name="country" id="country">
+        <option value='EUA'>EUA</option>
+        <option value='Brazil'>Brazil</option>
+        <option value='Other'>Other</option>
+    </select>
+
+    <input type='button' value='Verify' onclick=verify()>
+
+    <div id='res'>
+
+    </div>
+
+    <script>
+        function verify() {
+            var country = window.document.querySelector('select#country')
+            var value = country.value
+            var res = window.document.querySelector('div#res')
+        
+            res.innerHTML = `<p>Your country is ${value}.</p>`
+            if (value == 'EUA') {
+                res.innerHTML += 'My brother! You are welcome! Come to America!'
+            } else {
+                if (value == 'Brazil'){
+                    res.innerHTML += 'Hi my friend, come in, but do not stay too long.'
+                } else {
+                    res.innerHTML += 'Get out dude!'
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
